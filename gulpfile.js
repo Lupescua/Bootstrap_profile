@@ -1,28 +1,50 @@
 const gulp = require('gulp'),
     sass = require('gulp-sass');
+     del  = require('del');
 
-gulp.task('build', ['compile-css', 'copy-html', 'copy-img']);
 
-gulp.task('watch', function () {
-    gulp.watch('src/scss/*.scss', ['compile-css']);
-    gulp.watch('src/*.html', ['copy-html']);
-    gulp.watch('src/img/*', ['copy-img']);
+// Delete all CSS files
+gulp.task('css:clean', function() {
+	return del('dist/css/*.css', { force: true });
 });
 
-gulp.task('compile-css', function () {
-    return gulp.src('src/scss/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('dist/css'));
+// Compile CSS
+gulp.task('css:compile', ['css:clean'], function() {
+	return gulp.src('src/scss/*.scss')
+			.pipe(sass())
+			.pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('copy-img', function () {
-    return gulp.src('src/img/*').pipe(
-        gulp.dest('dist/img')
-    );
+// Delete all static files such as images etc.
+gulp.task('static:clean', function() {
+	return del([
+			'dist/**/*', // delete all files
+			'!dist/**/*.html', // except html
+			'!dist/**/*.css' // except css
+	], { force: true });
 });
 
-gulp.task('copy-html', function () {
+gulp.task('static:copy', ['static:clean'], function() {
+	return gulp.src('src/img/**/*')
+			.pipe(gulp.dest('dist/img'));
+});
+
+// Delete all HTML files
+gulp.task('html:clean', function() {
+	return del('dist/**/*.html', { force: true });
+});
+
+// Copy all HTML files
+gulp.task('html:copy', function () {
     return gulp.src('src/*.html').pipe(
         gulp.dest('dist')
     );
+});
+
+gulp.task('build', ['css:compile', 'html:copy', 'static:copy']);
+
+gulp.task('develop', ['build'], function() {
+	gulp.watch('src/scss/*', ['css:compile']); // watch for changes in SCSS
+	gulp.watch('src/**/*.html', ['html:copy']); // watch for changes in HTML
+	gulp.watch('src/img/**/*', ['static:copy']); // watch for changes in static files
 });

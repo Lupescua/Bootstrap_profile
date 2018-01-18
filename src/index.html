@@ -5,37 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My portfolio</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
-        crossorigin="anonymous">
-
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
 
 <body>
     <a href="#content">Skip to content</a>
-    <header>
-        <a href="/">
-            <img src="img/dacian_wolf.png" alt="My portfolio" width="200">
+    <nav class="navbar sticky-top navbar-light bg-light">
+        <a class="navbar-brand" href="#home">
+            <img src="img/dacian_wolf.png" width="70" height="70" alt="My portfolio">
         </a>
+    </nav>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="#home">home</a>
-                </li>
-                <li>
-                    <a href="#skills">skills</a>
-                </li>
-                <li>
-                    <a href="#portfolio">portfolio</a>
-                </li>
-                <li>
-                    <a href="#about">about me</a>
-                </li>
-                <li>
-                    <a href="#contact">contact</a>
-                </li>
-            </ul>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white">Collapsed content</h4>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </nav>
+    </div>
+    <header>
+
+<!-- pills with dropdown -->
+<ul class="nav nav-pills justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link active" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#skills">Skills</a>
+    </li>
+    <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+        </li>
+    <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> Portfolio</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+        </li>
+    <li class="nav-item">
+            <a class="nav-link" href="#contact">contact</a>
+        <!-- <a class="nav-link disabled" href="#">Disabled</a> -->
+        <!-- Home: Pic + Descr
+        Portfolio - extra pages for each partner
+        Skills
+        Partner
+        About me
+        conct ne -->
+    </li>
+</ul>
     </header>
 
     <main id="content" class="container">
