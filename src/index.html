@@ -11,81 +11,64 @@
 </head>
 
 <body>
-    <a href="#content">Skip to content</a>
-    <nav class="navbar sticky-top navbar-light bg-light">
+    <!-- <div data-spy="scroll" data-target="#navbar" data-offset="10">
+            With this tried to make the nav follow you wherever you are on the page. Meaning there is a box appearing over the element you're at. I didn't manage to make it work yet. Reminder: you should create a </div> at the bottom of the site (after the footer) -->
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+    <nav id="navbar" class="navbar sticky-top navbar-light bg-light nav-tabs">
         <a class="navbar-brand" href="#home">
             <img src="img/dacian_wolf.png" width="70" height="70" alt="My portfolio">
         </a>
+        <ul class="nav nav-pills justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item dropdown">
+                <!-- Add dropdown menus with a little extra HTML and the dropdowns JavaScript plugin. -->
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Other Experience</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#BD">Business Days</a>
+                    <a class="dropdown-item" href="#RE">Restart Energy</a>
+                    <a class="dropdown-item" href="#MH">Minds Hub</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#Son">Sonae</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Me</a>
+            </li>
+        </ul>
     </nav>
 
-    <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Collapsed content</h4>
-                <span class="text-muted">Toggleable via the navbar brand.</span>
-            </div>
-        </div>
-        <nav class="navbar navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-    </div>
-    <header>
-
-<!-- pills with dropdown -->
-<ul class="nav nav-pills justify-content-end">
-    <li class="nav-item">
-        <a class="nav-link active" href="#home">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#skills">Skills</a>
-    </li>
-    <li class="nav-item">
-            <a class="nav-link" href="#skills">Skills</a>
-        </li>
-    <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> Portfolio</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-        </li>
-    <li class="nav-item">
-            <a class="nav-link" href="#contact">contact</a>
-        <!-- <a class="nav-link disabled" href="#">Disabled</a> -->
-        <!-- Home: Pic + Descr
-        Portfolio - extra pages for each partner
-        Skills
-        Partner
-        About me
-        conct ne -->
-    </li>
-</ul>
-    </header>
-
     <main id="content" class="container">
+
         <section id="home">
             <div class="jumbotron">
                 <h1 class="display-4">Adrian Lupescu</h1>
                 <p class="lead">Davos Seaworth: This is Jon Snow... He's King in the North..</p>
                 <hr class="my-4">
-                <p>Steve Jobs: When you grow up, you tend to get told the world is the way that it is, and your life is just
+                <!-- <img src="img\adrian_serious_painting.jpg" alt="It’s me, Adrian Lupescu"> -->
+                <h1>Looking for a ex-Entrepreneur passionate about innovating the world? </h1>
+                <!-- <p>Steve Jobs: When you grow up, you tend to get told the world is the way that it is, and your life is just
                     to live your life inside the world and try not to bash into the walls too much. But that's a very limited
                     life. Life can be much broader once you discover one simple fact. And that is that everything around
                     you that you call life, was made up by people that are no smarter than you. And you can change it. You
                     can influence it. You can build your own things that other people can use. To shake off this erroneous
                     notion that life is just there, and you're just gonna live in it, versus embrace it. Change it, improve
-                    it. Make your mark upon it. And once you learn that, you'll never be the same again.</p>
+                    it. Make your mark upon it. And once you learn that, you'll never be the same again.</p> -->
                 <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Fast-forward to Hogwarts</a>
+                    <a class="btn btn-primary btn-lg" href="#contact" role="button">Fast-forward to Hogwarts</a>
                 </p>
             </div>
-
             <div class="row">
                 <div class="col-sm-6 col-md">
                     <h2>Discover</h2>
@@ -110,7 +93,6 @@
                 </div>
             </div>
         </section>
-
         <section id="skills">
             <h2>My skills</h2>
             <ul style="list-style:none;">
@@ -156,7 +138,6 @@
                 </li>
             </ul>
         </section>
-
         <section id="portfolio" class="container">
             <h2>My Portfolio</h2>
             <div class="row justify-content-center">
@@ -179,7 +160,6 @@
                         </div>
                     </article>
                 </div>
-
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <article class="card mb-4">
                         <img class="card-img-top" src="img/dacian_wolf.png" alt="wolf">
@@ -275,21 +255,77 @@
                         </div>
                     </article>
                 </div>
-
             </div>
-
         </section>
-
         <section id="about">
             <h2>About me</h2>
-            <img src="img\adrian_serious_painting.jpg" alt="It’s me, Adrian Lupescu">
-            <h1>Looking for a ex-Entrepreneur passionate about innovating the world? </h1>
             <p>A young mind looking for an innovative place to apply my skills. Using an opened mind, I’m good at coming up
                 with ideas, planning the implementation and delivering a finalized project. I take great pride at getting
                 the best results.</p>
+
+            <div class="row justify-content-center">
+                <div class="col-6" id="BD">
+                    <article class="card mb-4">
+                        <img class="card-img-top" src="img/Business_days.jpg" alt="Business_Days">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <a href="https://www.businessdays.ro/en">Business Days</a>
+                            </h3>
+                            <p class="card-text">Logistics Coordinator</p>
+                            <h4>Business Days is a networking platform dedicated to entrepreneurs and managers whose goal is
+                                to create a healthy and sustainable entrepreneurial culture in Romania.</h4>
+                        </div>
+                    </article>
+                </div>
+                    <div class="col-6" id="Son">
+                        <article class="card mb-4">
+                            <img class="card-img-top" src="img/Sonae.jpg" alt="Sonae">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    <a href="https://www.sonae.pt/en/">Sonae</a>
+                                </h3>
+                                <p class="card-text">Innovation Analyst</p>
+                                <h4>Sonae is a multinational corporation managing a wide portfolio of companies, creating value
+                                    across several geographic areas, with a solid culture and highly-developed ability to
+                                    innovate and execute its actions, taking the benefits of progress to an ever-increasing
+                                    number of people.</h4>
+                            </div>
+                        </article>
+                    </div>
+                        <div class="col-6" id="RE">
+                            <article class="card mb-4">
+                                <img class="card-img-top" src="img/Restart_energy2.jpg" alt="Restart_Energy">
+                                <div class="card-body">
+                                    <h3 class="card-title">
+                                        <a href="https://restartenergy.ro/en//">Restart Energy</a>
+                                    </h3>
+                                    <p class="card-text">Business Development Consultant</p>
+                                    <h4>Restart Energy, the fastest growing energy provider in the European Union with over 30,000
+                                        existing customers, is building an efficient and transparent ecosystem  —  Restart
+                                        Energy Democracy (RED) — to bridge the global divide between energy producers, prosumers
+                                        and consumers using blockchain technology.</h4>
+                                </div>
+                            </article>
+                        </div>
+                            <div class="col-6" id="MD">
+                                <article class="card mb-4">
+                                    <img class="card-img-top" src="img/Minds_Hub.jpg" alt="Minds Hub">
+                                    <div class="card-body">
+                                        <h3 class="card-title">
+                                            <a href="http://www.mindshub.ro/">Minds Hub</a>
+                                        </h3>
+                                        <p class="card-text">Founding Member</p>
+                                        <h4>Minds Hub is the physical space that brings together, according to common values
+                                            and passions, students, professionals and teachers from different fields. It
+                                            is also the virtual space where tomorrow's leaders have access to all resources
+                                            online and offline to grow and make a difference.</h4>
+                                    </div>
+                                </article>
+                            </div>
+            </div>
         </section>
         <section id="contact">
-            <h3>Contact me</h3>
+            <h3>Contact me:</h3>
             <!-- This part is added from Tomas: action="http://cbp.vosk-design.cz/process-form.php" method="POST" class="form-contact"> -->
             <form action="http://cbp.vosk-design.cz/process-form.php" method="POST" class="form-contact">
                 <div class="form-row">
@@ -316,20 +352,29 @@
                     <label for="exampleFormControlTextarea1">Message</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-secondar">Dracaris!</button>
             </form>
 
-            <h3>Find me here</h3>
-            <a href="#">GitHub</a>
-            <a href="#">Linked In</a>
-            <a href="#">Instagram</a>
+            <footer>
+                <h3>Find me here:</h3>
+                <a href="https://github.com/Lupescua">GitHub</a>
+                <a href="https://www.linkedin.com/in/adrian-lupescu-20054450/">LinkedIn</a>
+                <a href="https://www.facebook.com/lupescu.adrianstefan">Facebook</a>
+            </footer>
         </section>
     </main>
-
     <footer>
         <p>Nice to meet you!</p>
         <p>Copyright @Aneta Webbie 2018</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

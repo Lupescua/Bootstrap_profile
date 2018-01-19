@@ -1,0 +1,23 @@
+footer {
+    text-align: center;
+}
+
+$second-bg: #818985;
+// secondary-background-color: #818985 _ Slate Grey - a kind of grey. Good for backgrounds
+$white-text-color: #EBE8E7;
+// White Smoke - a kind of light pink. Good for white text
+
+.btn{
+    background-color: $second-bg;
+}
+// .jumbotron {
+//     background-image: url("img\adrian_serious_painting.jpg");}
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(../img/adrian_serious_painting.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:$white-text-color;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
