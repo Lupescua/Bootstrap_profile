@@ -41,10 +41,23 @@ gulp.task('html:copy', function () {
     );
 });
 
-gulp.task('build', ['css:compile', 'html:copy', 'static:copy']);
+
+// Delete all js files
+gulp.task('js:clean', function() {
+	return del('dist/js/*.js', { force: true });
+});
+
+// Compile js
+gulp.task('js:compile', ['js:clean'], function() {
+	return gulp.src('src/js/*.js')
+			.pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('build', ['css:compile', 'html:copy', 'static:copy','js:compile']);
 
 gulp.task('develop', ['build'], function() {
 	gulp.watch('src/scss/*', ['css:compile']); // watch for changes in SCSS
 	gulp.watch('src/**/*.html', ['html:copy']); // watch for changes in HTML
 	gulp.watch('src/img/**/*', ['static:copy']); // watch for changes in static files
+	gulp.watch('src/js/*', ['js:compile']); // watch for changes in JS
 });
