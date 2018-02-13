@@ -26,6 +26,20 @@ $second-bg: #818985;
     background-repeat: no-repeat;
     color: $white-text-color;
     text-shadow: black 0.3em 0.3em 0.3em;
+    &:hover {
+        background-image: url(../img/teddy.jpg);
+        margin:auto;
+        background-position: 0% 25%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: transparent;
+    }
+    &.with-fast-transition {
+        transition-duration: 0.5s;
+    }
+    &.with-slow-transition {
+        transition: 5s;
+    }
 }
 
 .card-body {
@@ -39,31 +53,27 @@ $second-bg: #818985;
     margin-bottom: 1em;
     position: relative;
     height: 1.8em;
-
     border-color: white;
 }
 
 .beard {
     position: absolute;
-	left: 0px;
-	font-weight: 800;
-	padding: 3px 30px 2px 10px;
+    left: 0px;
+    font-weight: 800;
+    padding: 3px 30px 2px 10px;
     background-color: #549C74;
     color: #EBE8E7;
 }
 
-.skill_text{
-
-	position: absolute;
-	right: 0px;
-	font-weight: 800;
-    padding: 3px 10px 2px;
-
-    // padding-left: 2em;
+.skill_text {
+    position: absolute;
+    right: 0px;
+    font-weight: 800;
+    padding: 3px 10px 2px; // padding-left: 2em;
     // position: absolute;
     // right: 0;
 }
 
-li{
+li {
     border-color: white;
 }

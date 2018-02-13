@@ -10,7 +10,8 @@ $('.progress').on('appear', function () {
 });
 
 function progress(barID, value) {
-    $(barID).animate({
+    // $(barID).delay(500).animate({
+        $(barID).animate({
         'width': value
     }, 2000);
 };
